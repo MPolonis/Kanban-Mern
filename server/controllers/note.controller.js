@@ -38,11 +38,8 @@ export function deleteNote(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    Lane.findOne({ notes: req.params.noteId }).then(lane => {
-      const remainingNotes = lane.notes.filter(note => note.id !== noteId);
-      lane.update({ notes: remainingNotes });
-    }).then(() => {
-      note.remove();
+    note.remove().then(() => {
+      res.status(200).end();
     });
   });
 }
@@ -52,13 +49,7 @@ export function editNote(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    note.task = req.body.task;
-    note.save((err, saved) => {
-      if (err) {
-        res.status(500).send(err);
-      }
-      res.json({ saved });
-    });
+    res.json({ note });
   });
 }
 
