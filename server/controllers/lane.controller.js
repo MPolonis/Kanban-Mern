@@ -49,7 +49,7 @@ export function deleteLane(req, res) {
 }
 
 export function editLane(req, res) {
-  Lane.update({ id: req.params.laneId }).exec((err, lane) => {
+  Lane.update({ id: req.params.laneId }, { $set: { task: req.body.task } }).exec((err, lane) => {
     if (err) {
       res.status(500).send(err);
     }

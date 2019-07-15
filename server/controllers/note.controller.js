@@ -45,7 +45,7 @@ export function deleteNote(req, res) {
 }
 
 export function editNote(req, res) {
-  Note.update({ id: req.params.noteId }).exec((err, note) => {
+  Note.update({ id: req.params.noteId }, { $set: { task: req.body.task } }).exec((err, note) => {
     if (err) {
       res.status(500).send(err);
     }
