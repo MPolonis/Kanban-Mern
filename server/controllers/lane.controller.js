@@ -53,6 +53,11 @@ export function editLane(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    res.json({ lane });
+    lane.save((err, saved) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.json(saved);
+    });
   });
 }

@@ -49,7 +49,11 @@ export function editNote(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    res.json({ note });
+    note.save((err, saved) => {
+      if (err) {
+        res.status(500).send(err);
+      }
+      res.json(saved);
+    });
   });
 }
-
