@@ -1,1 +1,30 @@
 /* Lane styles */
+.AddLane {
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.Lane {
+  height: auto;
+  width: 250px;
+  margin: 20px;
+  padding: 10px;
+  background-color: #565676;
+}
+
+button.LaneAddNote,
+button.LaneDelete {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.LaneHeader {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+

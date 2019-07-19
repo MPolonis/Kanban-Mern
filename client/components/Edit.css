@@ -1,0 +1,16 @@
+button.delete {
+    color: #305252;
+    outline: none;
+    border: none;
+    margin-left: 50px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.lane {
+    
+}
+.value {
+    color: #B7D5D4;
+    font-size: 12px;
+}
